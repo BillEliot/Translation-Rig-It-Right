@@ -52,4 +52,12 @@ inputs准确来说是什么意思？好，我们回到Nodes的概念。每个物
 
 有两种主要的方法找到形状节点。一般地，你应该只单纯地使用变形节点在接触Maya的最初职业生涯中。形状节点通常对普通用户隐藏，因为会误导他们。这就好像你开车一直踩着油门一样，这是不明智的。  
 ![](0.2.png)  
-找出形状节点的第一种方法是通过选择**Window > Outliner**或者**Perspective/Outliner**预设打开大纲窗口。在大纲窗口你可以看到你的物体列表(Object List)；那是变形节点。请不要相信我——
+找出形状节点的第一种方法是通过选择**Window > Outliner**或者**Perspective/Outliner**预设打开大纲窗口。在大纲窗口你可以看到你的物体列表(Object List)；那是变形节点。请不要相信我——永远要二次检查来确认我没有完全骗你或者糊涂了：点击**sphere1**节点，然后观察频道(Channel)窗口。你能看到变形(transform)，旋转(rotate)和缩放(scale)属性吗？对吗？这就是我过去怀疑的：一个变形节点。  
+在大纲窗口，如果你选择**Display > Shapes**，你将看到紧挨着**sphere1**出现了一个加号的标志。点击这个加号标志你将会看到形状节点。一旦你打开**sphere1**看到了形状节点，这个图标将会改变。当你选择了形状节点，在频道(Channel)窗口你将会看到什么？很好，观察它。你不再看到变形信息(Transform Information，你看到的是形状信息(Shape Information)。在这个例子中，可见的项目是半径(radius)，细分(subdivision)，轴(axis)和细分高度(subdivision height)。  
+这应该没有太超出你的认知，因为你有使用大纲的经验。但是，你见过超图窗口(Hypergraph Window)吗？当你选择球后，通过选择**Hypergraph > Hierarchy**打开超图窗口。这是和大纲一样的视图：你可以看到事物(Things)是如何继承的，除了这是以图形化展示的。你也可以通过选择**Options > Display > Shape Nodes**看到形状节点。  
+![](0.3.png)  
+
+### 透过表面(Hood)看本质
+
+很好。现在不要忘记如何找到形状节点。我们将相当频繁的需要形状节点。如果需要的话可以在这一页粘一张便利贴。接下来，让我们来看一下其他类型的超图窗口。仍然选择这个球体，然后选择**Hypergraph > Connections**。现在你已经正式揭开Maya的面纱一窥它的内部构造(Guts)。(我们注意到实际上这个窗口自称为"超图输入输出(Hypergraph InputOutput)"，这是另一个可以加入到你的鸡尾酒聚会的名词："Thurston，你知道超图连接窗口(Hypergraph Connections Window)过去也被叫做上流(Upstream)和下流(Downstream)以及输入(input)输出(output)吗？...对，我还要吃一个热狗(piggy-in-a-blanket)"。)  
+这非常重要。有两种方法可以图形化浏览事物(Things)：**Hypergraph > Hierarchy**像大纲一样只是显示层级继承关系。(注意，在图0.4中，形状节点是显示的) **Hypergraph > Connections**展示的是节点网络：事物(Things)是如何交互的。这是我们需要关心的点。我将警告你，
